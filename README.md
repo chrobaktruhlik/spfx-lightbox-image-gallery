@@ -32,7 +32,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Licensed under the [MIT](LICENSE.md) License.
 
 ## Minimal Path to Awesome
-Either download [compiled package](https://github.com/chrobak.truhlik/spfx-lightbox-image-gallery/releases/latest) or build it yourself:
+Either download [compiled package](https://github.com/chrobaktruhlik/spfx-lightbox-image-gallery/releases/latest) or build it yourself:
+
 - Clone this repository
 - In the command line run:
   - `npm install`
