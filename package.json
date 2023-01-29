@@ -13,7 +13,8 @@
     "dist": "npm -s run clean && npm -s run bundle-ship && npm -s run package-solution-ship",
     "package-solution-ship": "gulp package-solution --ship",
     "version": "node ./tools/pre-version.js",
-    "postversion": "npm -s run dist"
+    "postversion": "npm -s run dist",
+    "trust-dev-cert": "gulp trust-dev-cert"
   },
   "dependencies": {
     "@microsoft/sp-core-library": "1.12.1",
