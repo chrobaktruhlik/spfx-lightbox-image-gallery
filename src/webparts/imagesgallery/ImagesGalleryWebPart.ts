@@ -28,7 +28,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     private _initComplete = false;
     private _availableLists: IListInfo[] = [];
 
-    //https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
+    // https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
     private locales = {
         1029: 'cs-CZ',
         1033: 'en-US',
