@@ -2,8 +2,6 @@
 
 All notable changes to the `align-comments-vscode-extension` extension.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 - Add options specifying how to sort photo gallery folders.
 - Folder name in two lines.
