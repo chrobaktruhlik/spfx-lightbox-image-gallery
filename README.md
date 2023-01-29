@@ -1,4 +1,4 @@
-# SharePoint Lightroom Image Gallery Web Part
+# SharePoint Lightbox Image Gallery Web Part
 
 Fork from [YannickRe / spfx-lightbox-image-gallery](https://github.com/YannickRe/spfx-lightbox-image-gallery) version 1.0.0
 ## Summary
