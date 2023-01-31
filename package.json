@@ -1,44 +1,44 @@
 {
-  "name": "spfx-lightbox-image-gallery",
-  "version": "1.0.1",
-  "emgines": {
-    "node": "^14.21.2"
-  },
-  "private": true,
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "gulp build",
-    "bundle-ship": "gulp bundle --ship",
-    "clean": "gulp clean",
-    "dist": "npm -s run clean && npm -s run bundle-ship && npm -s run package-solution-ship",
-    "package-solution-ship": "gulp package-solution --ship",
-    "version": "node ./tools/pre-version.js",
-    "postversion": "npm -s run dist",
-    "trust-dev-cert": "gulp trust-dev-cert"
-  },
-  "dependencies": {
-    "@microsoft/sp-core-library": "1.13.1",
-    "@microsoft/sp-lodash-subset": "1.13.1",
-    "@microsoft/sp-office-ui-fabric-core": "1.13.1",
-    "@microsoft/sp-property-pane": "1.13.1",
-    "@microsoft/sp-webpart-base": "1.13.1",
-    "@pnp/pnpjs": "^2.15.0",
-    "@pnp/spfx-controls-react": "^3.12.0",
-    "@pnp/spfx-property-controls": "^3.11.0",
-    "office-ui-fabric-react": "7.174.1",
-    "react": "16.13.1",
-    "react-dom": "16.3.1",
-    "react-lightgallery": "0.9.0"
-  },
-  "devDependencies": {
-    "@microsoft/rush-stack-compiler-3.9": "0.4.47",
-    "@microsoft/sp-build-web": "1.13.1",
-    "@microsoft/sp-module-interfaces": "1.13.1",
-    "@microsoft/sp-tslint-rules": "1.13.1",
-    "@types/react": "16.9.51",
-    "@types/react-dom": "16.9.8",
-    "@types/webpack-env": "^1.16.2",
-    "ajv": "~5.2.2",
-    "gulp": "~4.0.2"
-  }
+    "name": "spfx-lightbox-image-gallery",
+    "version": "1.0.1",
+    "emgines": {
+        "node": "^14.21.2"
+    },
+    "private": true,
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "gulp build",
+        "bundle-ship": "gulp bundle --ship",
+        "clean": "gulp clean",
+        "dist": "npm -s run clean && npm -s run bundle-ship && npm -s run package-solution-ship",
+        "package-solution-ship": "gulp package-solution --ship",
+        "serve": "gulp serve --nobrowser",
+        "trust-dev-cert": "gulp trust-dev-cert",
+        "version": "node ./tools/pre-version.js"
+    },
+    "dependencies": {
+        "@microsoft/sp-core-library": "1.13.1",
+        "@microsoft/sp-lodash-subset": "1.13.1",
+        "@microsoft/sp-office-ui-fabric-core": "1.13.1",
+        "@microsoft/sp-property-pane": "1.13.1",
+        "@microsoft/sp-webpart-base": "1.13.1",
+        "@pnp/pnpjs": "^2.15.0",
+        "@pnp/spfx-controls-react": "^3.12.0",
+        "@pnp/spfx-property-controls": "^3.11.0",
+        "office-ui-fabric-react": "7.174.1",
+        "react": "16.13.1",
+        "react-dom": "16.3.1",
+        "react-lightgallery": "0.9.0"
+    },
+    "devDependencies": {
+        "@microsoft/rush-stack-compiler-3.9": "0.4.47",
+        "@microsoft/sp-build-web": "1.13.1",
+        "@microsoft/sp-module-interfaces": "1.13.1",
+        "@microsoft/sp-tslint-rules": "1.13.1",
+        "@types/react": "16.9.51",
+        "@types/react-dom": "16.9.8",
+        "@types/webpack-env": "^1.16.2",
+        "ajv": "~5.2.2",
+        "gulp": "~4.0.2"
+    }
 }

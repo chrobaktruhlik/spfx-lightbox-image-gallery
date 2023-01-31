@@ -3,9 +3,10 @@
 	"configurations": [
 		{
 			"name": "Hosted workbench",
-			"type": "chrome",
+			"type": "msedge",
 			"request": "launch",
-			"url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
+			//"url": "https://<your-SharePoint-teanant.sharepoint.com>/sites/<your-site>/_layouts/workbench.aspx",
+			"url": "${env:VSCODELAUNCHURL}",
 			"webRoot": "${workspaceRoot}",
 			"sourceMaps": true,
 			"resolveSourceMapLocations": [

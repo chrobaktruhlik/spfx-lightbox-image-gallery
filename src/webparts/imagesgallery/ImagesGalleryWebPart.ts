@@ -4,8 +4,7 @@ import { Version, Environment, EnvironmentType, DisplayMode } from '@microsoft/s
 import { ThemeProvider, IReadonlyTheme, ThemeChangedEventArgs } from '@microsoft/sp-component-base';
 import {
     IPropertyPaneConfiguration,
-    PropertyPaneDropdown,
-    PropertyPaneSlider
+    PropertyPaneDropdown
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { isEqual, isEmpty } from '@microsoft/sp-lodash-subset';
