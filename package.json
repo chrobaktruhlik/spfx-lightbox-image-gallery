@@ -14,7 +14,7 @@
         "package-solution-ship": "gulp package-solution --ship",
         "serve": "gulp serve --nobrowser",
         "trust-dev-cert": "gulp trust-dev-cert",
-        "version": "node ./tools/pre-version.js"
+        "postversion": "gulp version-sync"
     },
     "dependencies": {
         "@microsoft/sp-core-library": "1.14.0",
