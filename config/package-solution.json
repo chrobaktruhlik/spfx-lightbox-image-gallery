@@ -36,7 +36,7 @@
         "features": [
             {
                 "title": "spfx Feature",
-                "description": "The feature that activates elements of the spfx-1-14-0 solution.",
+                "description": "The feature that activates elements of the solution.",
                 "id": "256cc7e1-1154-4987-83ae-644419f6ce57",
                 "version": "1.0.0.0"
             }
