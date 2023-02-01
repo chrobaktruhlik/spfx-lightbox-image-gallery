@@ -1,7 +1,7 @@
 {
     "name": "spfx-lightbox-image-gallery",
     "version": "1.0.1",
-    "emgines": {
+    "engines": {
         "node": "^14.21.2"
     },
     "private": true,
@@ -17,11 +17,11 @@
         "version": "node ./tools/pre-version.js"
     },
     "dependencies": {
-        "@microsoft/sp-core-library": "1.13.1",
-        "@microsoft/sp-lodash-subset": "1.13.1",
-        "@microsoft/sp-office-ui-fabric-core": "1.13.1",
-        "@microsoft/sp-property-pane": "1.13.1",
-        "@microsoft/sp-webpart-base": "1.13.1",
+        "@microsoft/sp-core-library": "1.14.0",
+        "@microsoft/sp-lodash-subset": "1.14.0",
+        "@microsoft/sp-office-ui-fabric-core": "1.14.0",
+        "@microsoft/sp-property-pane": "1.14.0",
+        "@microsoft/sp-webpart-base": "1.14.0",
         "@pnp/pnpjs": "^2.15.0",
         "@pnp/spfx-controls-react": "^3.12.0",
         "@pnp/spfx-property-controls": "^3.11.0",
@@ -32,9 +32,9 @@
     },
     "devDependencies": {
         "@microsoft/rush-stack-compiler-3.9": "0.4.47",
-        "@microsoft/sp-build-web": "1.13.1",
-        "@microsoft/sp-module-interfaces": "1.13.1",
-        "@microsoft/sp-tslint-rules": "1.13.1",
+        "@microsoft/sp-build-web": "1.14.0",
+        "@microsoft/sp-module-interfaces": "1.14.0",
+        "@microsoft/sp-tslint-rules": "1.14.0",
         "@types/react": "16.9.51",
         "@types/react-dom": "16.9.8",
         "@types/webpack-env": "^1.16.2",
