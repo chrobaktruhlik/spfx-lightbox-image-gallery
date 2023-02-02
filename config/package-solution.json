@@ -6,7 +6,7 @@
             "privacyUrl": "https://contoso.com/privacy",
             "termsOfUseUrl": "https://contoso.com/terms-of-use",
             "websiteUrl": "https://contoso.com/my-app",
-            "mpnId": "Undefined-1.14.0"
+            "mpnId": "Undefined"
         },
         "name": "SharePoint Lightbox Image Gallery",
         "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
@@ -14,29 +14,31 @@
         "supportedLocales": [
             "en-us",
             "sk-sk"
-          ],
+        ],
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
         "isDomainIsolated": false,
         "metadata": {
             "shortDescription": {
-              "default": "Short description of the solution. This value will be displayed on Add an app page. A dictionary must contain a \"default\" key.",
-              "sk-sk": "Krátky opis aplikácie."
+                "default": "Short description of the solution. This value will be displayed on Add an app page. A dictionary must contain a \"default\" key.",
+                "sk-sk": "Krátky opis aplikácie."
             },
             "longDescription": {
-              "default": "Long description of the solution with HTML support. This value will be displayed on the App's About page. A dictionary must contain a \"default\" key.",
-              "sk-sk": "Popis aplikácie."
+                "default": "Long description of the solution with HTML support. This value will be displayed on the App's About page. A dictionary must contain a \"default\" key.",
+                "sk-sk": "Popis aplikácie."
             },
             "screenshotPaths": [],
             "videoUrl": "",
-            "categories": ["Site Design"]
-          },
+            "categories": [
+                "Site Design"
+            ]
+        },
         "features": [
             {
-              "title": "spfx Feature",
-              "description": "The feature that activates elements of the spfx-1-14-0 solution.",
-              "id": "256cc7e1-1154-4987-83ae-644419f6ce57",
-              "version": "1.0.0.0"
+                "title": "spfx Feature",
+                "description": "The feature that activates elements of the solution.",
+                "id": "256cc7e1-1154-4987-83ae-644419f6ce57",
+                "version": "1.0.0.0"
             }
         ]
     },
