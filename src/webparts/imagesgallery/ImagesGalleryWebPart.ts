@@ -5,7 +5,7 @@ import { ThemeProvider, IReadonlyTheme, ThemeChangedEventArgs } from '@microsoft
 import {
     IPropertyPaneConfiguration,
     PropertyPaneDropdown,
-    PropertyPaneSlider
+    PropertyPaneChoiceGroup
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { isEqual, isEmpty } from '@microsoft/sp-lodash-subset';
@@ -28,14 +28,15 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     private _initComplete = false;
     private _availableLists: IListInfo[] = [];
 
-    //https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
+    // The locales variable lists all languages supported by SharePoint Online:
+    // https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
     private locales = {
         1029: 'cs-CZ',
         1033: 'en-US',
         1051: 'sk-SK',
     };
 
-    private getLocaleId(localeName: string): number {
+    private getLocaleId(localeName: string): number {                                  // Get the LCID from the locale name
         const pos: number = (Object as any).values(this.locales).indexOf(localeName);
         if (pos > -1) {
             return parseInt(Object.keys(this.locales)[pos]);
@@ -45,7 +46,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         }
     }
 
-    private getLocaleName(localeId: number): string {
+    private getLocaleName(localeId: number): string {                                  // Get locale name from the LCID
         const pos: number = Object.keys(this.locales).indexOf(localeId.toString());
         if (pos > -1) {
             return (Object as any).values(this.locales)[pos];
@@ -159,7 +160,24 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                                             index: i
                                         };
                                     })
-                                })
+                                }),
+                            
+                                PropertyPaneChoiceGroup('textOrImageType', {  
+                                    label: 'Image/Text',  
+                                    options: [  
+                                        {  
+                                            key: 'Text',  
+                                            text: 'Text',  
+                                            checked: true  
+                                        },  
+                                        {  
+                                            key: 'Image',  
+                                            text: 'Image',  
+                                        }  
+                                    ]  
+                                })                             
+ 
+
                             ]
                         }
                     ]

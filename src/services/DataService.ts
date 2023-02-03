@@ -25,8 +25,8 @@ export default class DataService implements IDataService {
       };
     }
   
-    private async getSubFolders(folder: IFolder): Promise<IFolderInfo[]> {
-        let folders = await folder.folders.orderBy("TimeCreated", false).get();
+    private async getSubFolders(folder: IFolder): Promise<IFolderInfo[]> {  // Get folders
+        let folders = await folder.folders.orderBy("Name", true).get();     // TimeCreated, false / Name, true
         folders = folders.filter(sf => !sf.IsWOPIEnabled && sf.ItemCount > 0);
         return folders;
     }
