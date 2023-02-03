@@ -12,13 +12,22 @@
 
 
 declare interface IImagesGalleryWebPartStrings {
-    NumberOfColumns: string;
-    ImageLibraryRootFolderUniqueId: string;
-    PlaceholderIconName: string;
-    PlaceholderName: string;
-    PlaceholderDescription: string;
-    PlaceholderButton: string;
-    ShowBlankEditInfoMessage: string;
+    ImageLibraryRootFolderUniqueIdLabel: string;               // "Document library"
+    PropertyPanePageHeaderDescription: string,                 // "Change the photo library and its display options.""
+    PropertyPaneGroupViewOptionsName: string,                  // "View options"
+
+    ShowBlankInfoMessage: string;                              // "No photos to display."
+
+    ImageLibraryFoldersOrderByLabel: string;                   // "Sort folders by:"
+    ImageLibraryFilesOrderByLabel: string;                     // "Sort files by:"
+    ImageLibraryOrderByTimeDESC: string;                       // "Time created - from newest to oldest"
+    ImageLibraryOrderByTimeASC: string;                        // "Time created - from oldest to newest"
+    ImageLibraryOrderByNameASC: string;                        // "Name"
+    ImageLibraryOrderByNameDESC: string;                       // "Name in reverse order"
+
+    // React component strings
+    WebPartPlaceholderDescription: string;                     // "Please configure the web part."
+    WebPartPlaceholderName: string;                            // "Configure your web part"
 }
 
 declare module 'ImagesGalleryWebPartStrings' {

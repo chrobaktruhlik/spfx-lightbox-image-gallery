@@ -3,32 +3,44 @@
     "id": "4ed6a8a4-0d88-4c94-b969-70a87fd2abb8",
     "alias": "LightboxImageGalleryWebPart",
     "componentType": "WebPart",
+
+    // The "*" signifies that the version should be taken from the package.json
     "version": "*",
+
     "manifestVersion": 2,
+
+    // If true, the component can only be installed on sites where Custom Script is allowed.
+    // Components that allow authors to embed arbitrary script code should set this to true.
+    // https://support.office.com/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
     "requiresCustomScript": false,
+
     "supportsFullBleed": true,
     "supportedHosts": [
-        "SharePointWebPart"
+        "SharePointWebPart",
+        "SharePointFullPage"
     ],
+    
     "supportsThemeVariants": true,
+    "hiddenFromToolbox": false,
+    "disabledOnClassicSharepoint": true,
+
     "preconfiguredEntries": [
         {
-            "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
-            "group": {
-                "default": "SPFx WebParts"
-            },
             "title": {
                 "default": "Lightbox Image Gallery",
                 "sk-SK": "Lightbox galéria obrázkov"
             },
             "description": {
                 "default": "Display a good looking image gallery using lightbox effects",
-                "sk-SK": "Pridajte zobrazenie rozšírenej foto galérie"
+                "sk-SK": "Pridajte zobrazenie rozšírenej galérie fotografií."
             },
             "officeFabricIconFontName": "PhotoCollection",
+            "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",      // Text, media, and content
             "properties": {
-                "webPartTitle": "Lightbox Image Gallery",
-                "imageLibraryRootFolderUniqueId": ""
+                "webPartTitle": "",                                 // WebPart Title String.
+                "imageLibraryRootFolderUniqueId": "",               // Must be left empty string!
+                "imageLibraryFoldersOrderBy": "",                   // Folders order logic
+                "imageLibraryFilesOrderBy": ""                      // Files order logic
             }
         }
     ]

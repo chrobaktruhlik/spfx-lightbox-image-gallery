@@ -1,43 +1,42 @@
 {
-  /**
-   * Install Chrome Debugger Extension for Visual Studio Code to debug your components with the
-   * Chrome browser: https://aka.ms/spfx-debugger-extensions
-   */
-  "version": "0.2.0",
-  "configurations": [{
-      "name": "Local workbench",
-      "type": "chrome",
-      "request": "launch",
-      "url": "https://localhost:4321/temp/workbench.html",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "runtimeArgs": [
-        "--remote-debugging-port=9222"
-      ]
-    },
-    {
-      "name": "Hosted workbench",
-      "type": "chrome",
-      "request": "launch",
-      "url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "runtimeArgs": [
-        "--remote-debugging-port=9222",
-        "-incognito"
-      ]
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "SPFx",
+			"type": "msedge",
+			"request": "launch",
+
+			// You have to create '.env' file with key: 'URL=https://your-sharepoint-site'
+			"url": "${input:envfile.url}/_layouts/workbench.aspx",
+			
+			"webRoot": "${workspaceRoot}",
+			"sourceMaps": true,
+			"resolveSourceMapLocations": [
+				"${workspaceFolder}/**",
+				"!**/node_modules/**"
+			],
+			"sourceMapPathOverrides": {
+				"webpack:///.././src/*": "${webRoot}/src/*",
+				"webpack:///../../../src/*": "${webRoot}/src/*",
+				"webpack:///../../../../src/*": "${webRoot}/src/*",
+				"webpack:///../../../../../src/*": "${webRoot}/src/*"
+			},
+			"runtimeArgs": [
+				"--remote-debugging-port=9222",
+				"-incognito"
+			]
+		}
+	],
+    "inputs": [
+		{
+		  	"id": "envfile.url",
+		  	"type": "command",
+		  	"command": "extension.commandvariable.file.content",
+		  	"args": {
+				"fileName": "${workspaceFolder}/.env",
+				"key": "URL",
+				"default": "https://enter-your-SharePoint-site"
+		  	}
+		}
+	]
 }
