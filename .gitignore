@@ -33,3 +33,8 @@ obj
 *.scss.ts
 
 package-lock.json
+
+# Sensitive data
+.env
+
+*.scss.d.ts

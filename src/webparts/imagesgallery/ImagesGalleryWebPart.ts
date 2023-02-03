@@ -5,7 +5,7 @@ import { ThemeProvider, IReadonlyTheme, ThemeChangedEventArgs } from '@microsoft
 import {
     IPropertyPaneConfiguration,
     PropertyPaneDropdown,
-    PropertyPaneSlider
+    PropertyPaneChoiceGroup
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { isEqual, isEmpty } from '@microsoft/sp-lodash-subset';
@@ -14,7 +14,6 @@ import { sp } from "@pnp/pnpjs";
 import * as strings from 'ImagesGalleryWebPartStrings';
 import { ImagesGalleryContainer, IImagesGalleryContainerProps } from './components/ImagesGalleryContainer';
 import { IDataService } from '../../models/IDataService';
-import MockDataService from '../../services/MockDataService';
 import DataService from '../../services/DataService';
 import { IImagesGalleryWebPartProps } from './IImagesGalleryWebPartProps';
 import { IListInfo } from '@pnp/sp/lists';
@@ -28,32 +27,33 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     private _initComplete = false;
     private _availableLists: IListInfo[] = [];
 
-    //https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
-    private locales = {
-        1029: 'cs-CZ',
-        1033: 'en-US',
-        1051: 'sk-SK',
-    };
+    // // The locales variable lists all languages supported by SharePoint Online:
+    // // https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
+    // private locales = {
+    //     1029: 'cs-CZ',
+    //     1033: 'en-US',
+    //     1051: 'sk-SK',
+    // };
 
-    private getLocaleId(localeName: string): number {
-        const pos: number = (Object as any).values(this.locales).indexOf(localeName);
-        if (pos > -1) {
-            return parseInt(Object.keys(this.locales)[pos]);
-        }
-        else {
-            return 0;
-        }
-    }
+    // private getLocaleId(localeName: string): number {                                            // Get the LCID from the locale name
+    //     const pos: number = (Object as any).values(this.locales).indexOf(localeName);
+    //     if (pos > -1) {
+    //         return parseInt(Object.keys(this.locales)[pos]);
+    //     }
+    //     else {
+    //         return 0;
+    //     }
+    // }
 
-    private getLocaleName(localeId: number): string {
-        const pos: number = Object.keys(this.locales).indexOf(localeId.toString());
-        if (pos > -1) {
-            return (Object as any).values(this.locales)[pos];
-        }
-        else {
-            return '';
-        }
-    }
+    // private getLocaleName(localeId: number): string {                                            // Get locale name from the LCID
+    //     const pos: number = Object.keys(this.locales).indexOf(localeId.toString());
+    //     if (pos > -1) {
+    //         return (Object as any).values(this.locales)[pos];
+    //     }
+    //     else {
+    //         return '';
+    //     }
+    // }
 
     public async render(): Promise<void> {
         if (!this._initComplete) {
@@ -83,26 +83,26 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
             renderElement = React.createElement(
                 ImagesGalleryContainer,
                 {
-                    imageLibraryRootFolderUniqueId: this.properties.imageLibraryRootFolderUniqueId,
+                    imageLibraryRootFolderTitle: this.properties.imageLibratyRootFolderTitle,         // Document Library Root Title
+                    imageLibraryRootFolderUniqueId: this.properties.imageLibraryRootFolderUniqueId,   // Document Library Root Id
                     rootUrl: this.context.pageContext.web.serverRelativeUrl,
                     themeVariant: this._themeVariant,
                     dataService: this._dataService,
                     displayMode: this.displayMode,
-                    webPartTitle: this.properties.webPartTitle,
+                    webPartTitle: this.properties.webPartTitle,                                       // Sample text that is created when scaffolding your web part.
                     updateWebPartTitle: (value: string) => {
                         this.properties.webPartTitle = value;
                     }
                 } as IImagesGalleryContainerProps
             );
         } else {
-            if (this.displayMode === DisplayMode.Edit) {
+            if (this.displayMode === DisplayMode.Edit) {                                              // Create WebPart
+                // this.properties.webPartTitle = "WebPart title";  // Replace default webPartTitle text
                 const placeholder: React.ReactElement<any> = React.createElement(
                     this._placeholder,
                     {
-                        iconName: strings.PlaceholderIconName,
-                        iconText: strings.PlaceholderName,
-                        description: strings.PlaceholderDescription,
-                        buttonLabel: strings.PlaceholderButton,
+                        iconText: strings.WebPartPlaceholderName,                                     // "Configure your web part"
+                        description: strings.WebPartPlaceholderDescription,                           // "Please configure the web part."
                         onConfigure: () => { this._setupWebPart(); }
                     }
                 );
@@ -117,13 +117,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
 
     public async onInit(): Promise<void> {
         this._initThemeVariant();
-
-        if (Environment.type in [EnvironmentType.Local, EnvironmentType.Test]) {
-            this._dataService = new MockDataService();
-        }
-        else {
-            this._dataService = new DataService();
-        }
+        this._dataService = new DataService();
 
         sp.setup({
             spfxContext: this.context
@@ -139,19 +133,29 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         ReactDom.unmountComponentAtNode(this.domElement);
     }
 
-    protected get dataVersion(): Version {
+    protected get dataVersion(): Version {                                                            // @ts-ignore
         return Version.parse("1.0");
+    }
+
+    protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {  // This API is invoked after updating the new value of the property in the property bag.
+        if (propertyPath === "imageLibraryRootFolderUniqueId") {
+            // Save custom WebPart property 'imageLibraryRootFolderTitle'
+            this.properties.imageLibratyRootFolderTitle = this._availableLists.filter(value => { return value.RootFolder.UniqueId == this.properties.imageLibraryRootFolderUniqueId })[0].Title;
+        }
     }
 
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
         return {
             pages: [
                 {
+                    header: {
+                        description: strings.PropertyPanePageHeaderDescription
+                    },
                     groups: [
                         {
                             groupFields: [
                                 PropertyPaneDropdown("imageLibraryRootFolderUniqueId", {
-                                    label: strings.ImageLibraryRootFolderUniqueId,
+                                    label: strings.ImageLibraryRootFolderUniqueIdLabel,
                                     options: this._availableLists.map((listitem, i) => {
                                         return {
                                             key: listitem.RootFolder.UniqueId,
@@ -159,6 +163,24 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                                             index: i
                                         };
                                     })
+                                }),
+                            ]
+                        },
+                        {
+                            groupFields: [
+                                PropertyPaneChoiceGroup('textOrImageType', {
+                                    label: 'Zoradiť zložky podľa:',
+                                    options: [
+                                        {
+                                            key: 'Txxxx',
+                                            text: 'Času uverejnenia',
+                                            checked: true
+                                        },
+                                        {
+                                            key: 'Yxxxxx',
+                                            text: 'Názvu',
+                                        }
+                                    ]
                                 })
                             ]
                         }
@@ -168,15 +190,13 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         };
     }
 
-    protected async loadPropertyPaneResources(): Promise<void> {
+    protected async loadPropertyPaneResources(): Promise<void> {                                      // Showing a spinner while loading the property pane
         PropertyPaneHelpers.setSpinner();
-
-        this._availableLists = await this._dataService.getLists();
-
+        this._availableLists = await this._dataService.getLists();                                    // Code load resources - get lists of document/picture library
         PropertyPaneHelpers.clearSpinner(200);
     }
 
-    private _isWebPartConfigured(): boolean {
+    private _isWebPartConfigured(): boolean {                                                         // Testing if WebPart has been configured
         return !isEmpty(this.properties.imageLibraryRootFolderUniqueId);
     }
 

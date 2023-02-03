@@ -12,13 +12,11 @@
 
 
 declare interface IImagesGalleryWebPartStrings {
-    NumberOfColumns: string;
-    ImageLibraryRootFolderUniqueId: string;
-    PlaceholderIconName: string;
-    PlaceholderName: string;
-    PlaceholderDescription: string;
-    PlaceholderButton: string;
-    ShowBlankEditInfoMessage: string;
+    ImageLibraryRootFolderUniqueIdLabel: string;    // "Document library"
+    PropertyPanePageHeaderDescription: string,      // "Change the photo library and its display options.""
+    ShowBlankInfoMessage: string;                   // "No photos to display."
+    WebPartPlaceholderDescription: string;          // "Please configure the web part."
+    WebPartPlaceholderName: string;                 // "Configure your web part"
 }
 
 declare module 'ImagesGalleryWebPartStrings' {

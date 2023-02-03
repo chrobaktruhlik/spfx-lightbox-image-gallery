@@ -2,12 +2,14 @@
 
 All notable changes to the `align-comments-vscode-extension` extension.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 - Add options specifying how to sort photo gallery folders.
 - Folder name in two lines.
 - Correct the names of libraries and library folders
+
+## [1.0.2] - 2023-02-19
+- Update to SPFx v1.14.0
+- Fix: Show library root folder title instead of name.
 
 ## [1.0.1] - 2023-01-29
 - Cleanup and edit project workspace. Start of work on the project.

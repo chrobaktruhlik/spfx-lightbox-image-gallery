@@ -1,4 +1,5 @@
 export interface IImagesGalleryWebPartProps {
-    imageLibraryRootFolderUniqueId: string;
+    imageLibratyRootFolderTitle: string; // Document Library Title
+    imageLibraryRootFolderUniqueId: string;  // Document Library Id
     webPartTitle: string;
 }

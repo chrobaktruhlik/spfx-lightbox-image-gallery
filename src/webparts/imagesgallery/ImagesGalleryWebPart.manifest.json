@@ -11,23 +11,21 @@
         "SharePointWebPart"
     ],
     "supportsThemeVariants": true,
+    "disabledOnClassicSharepoint": true,
     "preconfiguredEntries": [
         {
-            "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
-            "group": {
-                "default": "SPFx WebParts"
-            },
             "title": {
                 "default": "Lightbox Image Gallery",
                 "sk-SK": "Lightbox galéria obrázkov"
             },
             "description": {
                 "default": "Display a good looking image gallery using lightbox effects",
-                "sk-SK": "Pridajte zobrazenie rozšírenej foto galérie"
+                "sk-SK": "Pridajte zobrazenie rozšírenej galérie fotografií."
             },
             "officeFabricIconFontName": "PhotoCollection",
+            "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",
             "properties": {
-                "webPartTitle": "Lightbox Image Gallery",
+                "webPartTitle": "",
                 "imageLibraryRootFolderUniqueId": ""
             }
         }
