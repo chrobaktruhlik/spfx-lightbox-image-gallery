@@ -4,7 +4,8 @@ import { Version, Environment, EnvironmentType, DisplayMode } from '@microsoft/s
 import { ThemeProvider, IReadonlyTheme, ThemeChangedEventArgs } from '@microsoft/sp-component-base';
 import {
     IPropertyPaneConfiguration,
-    PropertyPaneDropdown
+    PropertyPaneDropdown,
+    PropertyPaneChoiceGroup
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { isEqual, isEmpty } from '@microsoft/sp-lodash-subset';
@@ -159,7 +160,24 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                                             index: i
                                         };
                                     })
-                                })
+                                }),
+                            
+                                PropertyPaneChoiceGroup('textOrImageType', {  
+                                    label: 'Image/Text',  
+                                    options: [  
+                                        {  
+                                            key: 'Text',  
+                                            text: 'Text',  
+                                            checked: true  
+                                        },  
+                                        {  
+                                            key: 'Image',  
+                                            text: 'Image',  
+                                        }  
+                                    ]  
+                                })                             
+ 
+
                             ]
                         }
                     ]
