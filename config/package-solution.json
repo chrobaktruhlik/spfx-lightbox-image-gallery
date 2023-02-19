@@ -12,8 +12,8 @@
         "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
         "version": "1.0.2.0",
         "supportedLocales": [
-            "en-us",
-            "sk-sk"
+            "en-US",
+            "sk-SK"
         ],
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
@@ -21,11 +21,11 @@
         "metadata": {
             "shortDescription": {
                 "default": "Short description of the solution. This value will be displayed on Add an app page. A dictionary must contain a \"default\" key.",
-                "sk-sk": "Krátky opis aplikácie."
+                "sk-SK": "Krátky opis aplikácie."
             },
             "longDescription": {
                 "default": "Long description of the solution with HTML support. This value will be displayed on the App's About page. A dictionary must contain a \"default\" key.",
-                "sk-sk": "Popis aplikácie."
+                "sk-SK": "Popis aplikácie."
             },
             "screenshotPaths": [],
             "videoUrl": "",

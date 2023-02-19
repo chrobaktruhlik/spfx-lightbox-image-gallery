@@ -15,7 +15,13 @@ build.rig.getTasks = function () {
     return result;
 };
 
-build.initialize(gulp);
+/* fast-serve */
+const { addFastServe } = require("spfx-fast-serve-helpers");
+addFastServe(build);
+/* end of fast-serve */
+
+build.initialize(require('gulp'));
+
 
 gulp.task('version-sync', function (done) {                                                                                                  // Create gulp task: 'version-sync'
 // This function updates the package-solution version analogue to the the package.json file.

@@ -2,11 +2,10 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Hosted workbench",
+			"name": "SPFx",
 			"type": "msedge",
 			"request": "launch",
-			//"url": "https://<your-SharePoint-tenant.sharepoint.com>/sites/<your-site>/_layouts/workbench.aspx",
-			"url": "${env:VSCODELAUNCHURL}",
+			"url": "${input:envfile.url}/_layouts/workbench.aspx",
 			"webRoot": "${workspaceRoot}",
 			"sourceMaps": true,
 			"resolveSourceMapLocations": [
@@ -23,6 +22,18 @@
 				"--remote-debugging-port=9222",
 				"-incognito"
 			]
+		}
+	],
+    "inputs": [
+		{
+		  	"id": "envfile.url",
+		  	"type": "command",
+		  	"command": "extension.commandvariable.file.content",
+		  	"args": {
+				"fileName": "${workspaceFolder}/.env",
+				"key": "URL",
+				"default": "https://enter-your-SharePoint-site"
+		  	}
 		}
 	]
 }

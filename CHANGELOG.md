@@ -7,8 +7,9 @@ All notable changes to the `align-comments-vscode-extension` extension.
 - Folder name in two lines.
 - Correct the names of libraries and library folders
 
-## [2023-xx-xx]
-- Update to SPFx v1.13.1
+## [1.0.2] - 2023-02-19
+- Update to SPFx v1.14.0
+- Fix: Show library root folder title instead of name.
 
 ## [1.0.1] - 2023-01-29
 - Cleanup and edit project workspace. Start of work on the project.

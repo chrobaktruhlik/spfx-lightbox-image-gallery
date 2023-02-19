@@ -17,13 +17,13 @@ Feature set:
 
 ## Release Notes
 
-![drop](https://img.shields.io/badge/version-1.0.1-green.svg)
+![drop](https://img.shields.io/badge/version-1.0.2-green.svg)
 
 For more information see [CHANGELOG](CHANGELOG.md) file.
 
 ## Applies to
 
-* [SharePoint Online](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
+* [SharePoint Online](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview) Modern Site
 
 ## Disclaimer
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -43,6 +43,10 @@ Either download [compiled package](https://github.com/chrobaktruhlik/spfx-lightb
   - Install the dependencies to the local node_modules folder: `npm install`
   - Create the solution package (sppkg) in sharepoint\solution folder: `npm run dist`
 
-Install the package:
+Install package:
 - Add `spfx-lightbox-image-gallery.sppkg` to SharePoint AppCatalog and deploy
 - Add the web part `Lightbox Image Gallery` to a SharePoint page and enjoy
+
+Debug package:
+- In command line run `npm run serve`, and then
+- In Visual Studio Code: `Start Debugging – F5`

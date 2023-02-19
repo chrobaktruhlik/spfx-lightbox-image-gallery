@@ -1,11 +1,9 @@
-define([], function() {
-  return {
-    "lblAmountColumns": "Set the amount of columns for the gallery",
-    "lblPicturesURL": "Source for your images",
-    "PlaceholderIconName": "Edit",
-    "PlaceholderName": "Configure your web part",
-    "PlaceholderDescription": "Please configure the web part.",
-    "PlaceholderbtnLbl": "Configure",
-    "ShowBlankEditInfoMessage": "No result returned for this query. This Web Part will remain blank in display mode according to parameters."
-  }
+define([], function () {
+    return {
+        "ImageLibraryRootFolderUniqueIdLabel": "Phtoto library",
+        "PropertyPanePageHeaderDescription": "Change the photo library and its display options.",
+        "ShowBlankInfoMessage": "No photos to display.",
+        "WebPartPlaceholderDescription": "Please configure the web part.",
+        "WebPartPlaceholderName": "Configure your web part"
+    }
 });
