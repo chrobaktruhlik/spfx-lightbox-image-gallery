@@ -140,7 +140,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {  // This API is invoked after updating the new value of the property in the property bag.
         if (propertyPath === "imageLibraryRootFolderUniqueId") {
             // Save custom WebPart property 'imageLibraryRootFolderTitle'
-            this.properties.imageLibratyRootFolderTitle = this._availableLists.filter(value => { return value.RootFolder.UniqueId == this.properties.imageLibraryRootFolderUniqueId })[0].Title;
+            this.properties.imageLibratyRootFolderTitle = this._availableLists.filter(value => { return value.RootFolder.UniqueId == this.properties.imageLibraryRootFolderUniqueId; })[0].Title;
         }
     }
 
