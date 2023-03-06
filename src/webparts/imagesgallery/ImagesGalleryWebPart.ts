@@ -37,7 +37,6 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
 
         if (this.displayMode === DisplayMode.Edit) {
             const { Placeholder } = await import(
-                /* webpackChunkName: 'search-property-pane' */
                 '@pnp/spfx-controls-react/lib/Placeholder'
             );
             this._placeholder = Placeholder;
@@ -47,7 +46,6 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         this.properties.imageLibraryFoldersOrderBy = this.properties.imageLibraryFoldersOrderBy || "FolderNameASC";
          // Default Choice Files order by: FileNameASC, FileNameDESC, FileTimeASC, FileTimeDESC
         this.properties.imageLibraryFilesOrderBy = this.properties.imageLibraryFilesOrderBy || "FileNameASC";
-
 
         this.renderCompleted();
     }
@@ -88,7 +86,6 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                         iconName: 'Settings',
                         iconText: strings.WebPartPlaceholderName,                                      // "Configure your web part"
                         description: strings.WebPartPlaceholderDescription,                            // "Please configure the web part."
-                        // onConfigure: () => { this._setupWebPart(); }
                     }
                 );
                 renderElement = placeholder;
@@ -243,9 +240,5 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
             this.render();
         }
     }
-
-    // private _setupWebPart() {
-    //     this.context.propertyPane.open();
-    // }
 
 }
