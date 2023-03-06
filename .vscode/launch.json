@@ -5,10 +5,14 @@
 			"name": "SPFx",
 			"type": "msedge",
 			"request": "launch",
+<<<<<<< HEAD
 
 			// You have to create '.env' file with key: 'URL=https://your-sharepoint-site'
 			"url": "${input:envfile.url}/_layouts/workbench.aspx",
 			
+=======
+			"url": "${input:envfile.url}/_layouts/workbench.aspx",
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 			"webRoot": "${workspaceRoot}",
 			"sourceMaps": true,
 			"resolveSourceMapLocations": [

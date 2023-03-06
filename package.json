@@ -1,14 +1,21 @@
 {
     "name": "spfx-lightbox-image-gallery",
+<<<<<<< HEAD
     "version": "2.0.0",
+=======
+    "version": "1.0.2",
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
     "engines": {
         "node": "^14.21.2"
     },
     "private": true,
     "main": "lib/index.js",
+<<<<<<< HEAD
     "author": "chrobaktruhlik",
     "repository": "https://github.com/chrobaktruhlik/spfx-lightbox-image-gallery.git",
     "license": "MIT",
+=======
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
     "scripts": {
         "build": "gulp build",
         "bundle-ship": "gulp bundle --ship",
@@ -21,7 +28,10 @@
     },
     "dependencies": {
         "@microsoft/sp-core-library": "1.14.0",
+<<<<<<< HEAD
         "@microsoft/sp-image-helper": "^1.16.1",
+=======
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         "@microsoft/sp-lodash-subset": "1.14.0",
         "@microsoft/sp-office-ui-fabric-core": "1.14.0",
         "@microsoft/sp-property-pane": "1.14.0",
@@ -35,15 +45,24 @@
         "react-lightgallery": "0.9.0"
     },
     "devDependencies": {
+<<<<<<< HEAD
         "@microsoft/rush-stack-compiler-3.9": "^0.5.0",
+=======
+        "@microsoft/rush-stack-compiler-3.9": "0.5.0",
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         "@microsoft/sp-build-web": "1.14.0",
         "@microsoft/sp-module-interfaces": "1.14.0",
         "@microsoft/sp-tslint-rules": "1.14.0",
         "@types/react": "^16.9.51",
         "@types/react-dom": "^16.9.8",
         "@types/webpack-env": "^1.16.2",
+<<<<<<< HEAD
         "ajv": "~5.2.2",
         "gulp": "~4.0.2",
+=======
+        "gulp": "~4.0.2",
+        "ajv": "~5.2.2",
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         "spfx-fast-serve-helpers": "~1.14.0"
     }
 }

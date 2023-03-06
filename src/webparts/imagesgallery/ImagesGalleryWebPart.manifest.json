@@ -21,9 +21,13 @@
     ],
     
     "supportsThemeVariants": true,
+<<<<<<< HEAD
     "hiddenFromToolbox": false,
     "disabledOnClassicSharepoint": true,
 
+=======
+    "disabledOnClassicSharepoint": true,
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
     "preconfiguredEntries": [
         {
             "title": {
@@ -35,12 +39,19 @@
                 "sk-SK": "Pridajte zobrazenie rozšírenej galérie fotografií."
             },
             "officeFabricIconFontName": "PhotoCollection",
+<<<<<<< HEAD
             "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",      // Text, media, and content
             "properties": {
                 "webPartTitle": "",                                 // WebPart Title String.
                 "imageLibraryRootFolderUniqueId": "",               // Must be left empty string!
                 "imageLibraryFoldersOrderBy": "",                   // Folders order logic
                 "imageLibraryFilesOrderBy": ""                      // Files order logic
+=======
+            "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",
+            "properties": {
+                "webPartTitle": "",
+                "imageLibraryRootFolderUniqueId": ""
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
             }
         }
     ]

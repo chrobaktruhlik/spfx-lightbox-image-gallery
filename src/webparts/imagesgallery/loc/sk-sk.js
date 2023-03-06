@@ -1,6 +1,7 @@
 define([], function () {
     return {
         "ImageLibraryRootFolderUniqueIdLabel": "Knižnica fotografií",
+<<<<<<< HEAD
         "PropertyPanePageHeaderDescription":   "Vyberte knižnicu fotografií a jej možnosti zobrazenia.",
         "PropertyPaneGroupViewOptionsName":    "Možnosti zobrazenia",
 
@@ -15,5 +16,11 @@ define([], function () {
 
         "WebPartPlaceholderDescription":       "Prosím, vyberte knižnicu fotografií.",
         "WebPartPlaceholderName":              "Konfigurácia webovej časti"
+=======
+        "PropertyPanePageHeaderDescription": "Zmeňte knižnicu fotografií a jej možnosti zobrazenia.",
+        "ShowBlankInfoMessage": "Žiadne fotografie na zobrazenie.",
+        "WebPartPlaceholderDescription": "Prosím, nakonfigurujte webovú časť.",
+        "WebPartPlaceholderName": "Konfigurácia webovej časti"
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
     }
 });

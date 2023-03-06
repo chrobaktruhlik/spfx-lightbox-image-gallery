@@ -23,6 +23,10 @@ First public release. It retains the version numbering continuing from the origi
 - Update to SPFx v1.14.0
 - Fix: Show library root folder title instead of name.
 
+## [1.0.2] - 2023-02-19
+- Update to SPFx v1.14.0
+- Fix: Show library root folder title instead of name.
+
 ## [1.0.1] - 2023-01-29
 - Cleanup and edit project workspace. Start of work on the project.
 

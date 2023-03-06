@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+<<<<<<< HEAD
     // Configure glob patterns for excluding files and folders in the file explorer.
     "files.exclude": {
         "**/.git": true,
@@ -14,3 +15,16 @@
         "**/src/webparts/**/*.manifest.json": "jsonc"
     }
 }
+=======
+  // Configure glob patterns for excluding files and folders in the file explorer.
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/lib-amd": true,
+    "src/**/*.scss.ts": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+}
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c

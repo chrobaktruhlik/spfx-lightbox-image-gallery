@@ -39,8 +39,13 @@ gulp.task('version-sync', function (done) {                                     
         gutil.log('From old version:', gutil.colors.yellow(pkgSolution.solution.version), 'to new:', gutil.colors.yellow(newVersionNumber)); // Log old to new version
         pkgSolution.solution.version = newVersionNumber;                                                                                     // Assign newly generated version number to web part version
 
+<<<<<<< HEAD
         fs.writeFile('./config/package-solution.json', JSON.stringify(pkgSolution, null, 4), {"encoding":"utf8"}, function (err) { // Write changed package-solution file 
             if (err) gutil.log('Error:', err);
+=======
+        fs.writeFile('./config/package-solution.json', JSON.stringify(pkgSolution, null, 4), {"encoding":"utf8"}, function (error, result) { // Write changed package-solution file 
+            if (error) gutil.log('Error:', err);
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         });
 
     } else {

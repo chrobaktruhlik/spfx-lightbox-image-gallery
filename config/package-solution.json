@@ -10,7 +10,11 @@
         },
         "name": "SharePoint Lightbox Image Gallery",
         "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
+<<<<<<< HEAD
         "version": "2.0.0.0",
+=======
+        "version": "1.0.2.0",
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         "supportedLocales": [
             "en-US",
             "sk-SK"

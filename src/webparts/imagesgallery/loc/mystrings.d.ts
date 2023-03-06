@@ -12,6 +12,7 @@
 
 
 declare interface IImagesGalleryWebPartStrings {
+<<<<<<< HEAD
     ImageLibraryRootFolderUniqueIdLabel: string;               // "Document library"
     PropertyPanePageHeaderDescription: string,                 // "Change the photo library and its display options.""
     PropertyPaneGroupViewOptionsName: string,                  // "View options"
@@ -28,6 +29,13 @@ declare interface IImagesGalleryWebPartStrings {
     // React component strings
     WebPartPlaceholderDescription: string;                     // "Please configure the web part."
     WebPartPlaceholderName: string;                            // "Configure your web part"
+=======
+    ImageLibraryRootFolderUniqueIdLabel: string;    // "Document library"
+    PropertyPanePageHeaderDescription: string,      // "Change the photo library and its display options.""
+    ShowBlankInfoMessage: string;                   // "No photos to display."
+    WebPartPlaceholderDescription: string;          // "Please configure the web part."
+    WebPartPlaceholderName: string;                 // "Configure your web part"
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 }
 
 declare module 'ImagesGalleryWebPartStrings' {

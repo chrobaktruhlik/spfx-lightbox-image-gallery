@@ -18,7 +18,11 @@ Feature set:
 
 ## Release Notes
 
+<<<<<<< HEAD
 ![drop](https://img.shields.io/badge/Version-2.0.0-green.svg)
+=======
+![drop](https://img.shields.io/badge/version-1.0.2-green.svg)
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 
 For more information see [CHANGELOG](CHANGELOG.md) file.
 
@@ -35,7 +39,11 @@ Licensed under the [MIT](LICENSE.md) License.
 ## Minimal Path to Awesome
 Either download [compiled package](https://github.com/chrobaktruhlik/spfx-lightbox-image-gallery/releases/latest) or build it yourself:
 
+<<<<<<< HEAD
 - Download this repository
+=======
+- Clone this repository
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 - Install development toolchain prerequisites<br><span style="font-style:italic;">The SharePoint Framework development and build toolchain leverages various popular open-source tools. While most dependencies are included in project, you need to install a few dependencies globally on your workstation.</span>
 
   - Install Gulp: `npm install gulp-cli --global`
@@ -44,12 +52,20 @@ Either download [compiled package](https://github.com/chrobaktruhlik/spfx-lightb
   - Install the dependencies to the local node_modules folder: `npm install`
   - Create the solution package (sppkg) in sharepoint\solution folder: `npm run dist`
 
+<<<<<<< HEAD
 Install package to SharePoint:
+=======
+Install package:
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 - Add `spfx-lightbox-image-gallery.sppkg` to SharePoint AppCatalog and deploy
 - Add the web part `Lightbox Image Gallery` to a SharePoint page and enjoy
 
 Debug package:
+<<<<<<< HEAD
 - Install `npm install spfx-fast-serve -g`
 - Run `npm run serve`
 - Create .env file with `URL=https://your-sharepoint-site`
+=======
+- In command line run `npm run serve`, and then
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 - In Visual Studio Code: `Start Debugging – F5`

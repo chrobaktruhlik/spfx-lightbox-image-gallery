@@ -6,7 +6,11 @@ import {
     IPropertyPaneConfiguration,
     PropertyPaneChoiceGroup,
     PropertyPaneDropdown,
+<<<<<<< HEAD
     IPropertyPaneDropdownOption
+=======
+    PropertyPaneChoiceGroup
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 } from '@microsoft/sp-property-pane';
 
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
@@ -28,6 +32,38 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     private _themeProvider: ThemeProvider;
     private _themeVariant: IReadonlyTheme;
     private _initComplete = false;
+<<<<<<< HEAD
+=======
+    private _availableLists: IListInfo[] = [];
+
+    // // The locales variable lists all languages supported by SharePoint Online:
+    // // https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/localize-web-parts
+    // private locales = {
+    //     1029: 'cs-CZ',
+    //     1033: 'en-US',
+    //     1051: 'sk-SK',
+    // };
+
+    // private getLocaleId(localeName: string): number {                                            // Get the LCID from the locale name
+    //     const pos: number = (Object as any).values(this.locales).indexOf(localeName);
+    //     if (pos > -1) {
+    //         return parseInt(Object.keys(this.locales)[pos]);
+    //     }
+    //     else {
+    //         return 0;
+    //     }
+    // }
+
+    // private getLocaleName(localeId: number): string {                                            // Get locale name from the LCID
+    //     const pos: number = Object.keys(this.locales).indexOf(localeId.toString());
+    //     if (pos > -1) {
+    //         return (Object as any).values(this.locales)[pos];
+    //     }
+    //     else {
+    //         return '';
+    //     }
+    // }
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
 
     
     public async render(): Promise<void> {
@@ -64,15 +100,24 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
             renderElement = React.createElement(
                 ImagesGalleryContainer,
                 {
+<<<<<<< HEAD
                     imageLibraryRootFolderTitle: this.properties.imageLibraryRootFolderTitle,          // Document Library Root Title
                     imageLibraryRootFolderUniqueId: this.properties.imageLibraryRootFolderUniqueId,    // Document Library Root Id
                     imageLibraryFoldersOrderBy: this.properties.imageLibraryFoldersOrderBy,            // Document Library folders order by logic
                     imageLibraryFilesOrderBy: this.properties.imageLibraryFilesOrderBy,                // Folders in files order by logic
+=======
+                    imageLibraryRootFolderTitle: this.properties.imageLibratyRootFolderTitle,         // Document Library Root Title
+                    imageLibraryRootFolderUniqueId: this.properties.imageLibraryRootFolderUniqueId,   // Document Library Root Id
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
                     rootUrl: this.context.pageContext.web.serverRelativeUrl,
                     themeVariant: this._themeVariant,
                     dataService: this._dataService,
                     displayMode: this.displayMode,
+<<<<<<< HEAD
                     webPartTitle: this.properties.webPartTitle,                                        // Sample text that is created when scaffolding your web part.
+=======
+                    webPartTitle: this.properties.webPartTitle,                                       // Sample text that is created when scaffolding your web part.
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
                     updateWebPartTitle: (value: string) => {
                         this.properties.webPartTitle = value;
                     }
@@ -80,15 +125,25 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
             );
 
         } else {
+<<<<<<< HEAD
             if (this.displayMode === DisplayMode.Edit) {                                               // Create WebPart
+=======
+            if (this.displayMode === DisplayMode.Edit) {                                              // Create WebPart
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
                 // this.properties.webPartTitle = "WebPart title";  // Replace default webPartTitle text
                 const placeholder: React.ReactElement<any> = React.createElement(
                     this._placeholder,
                     {
+<<<<<<< HEAD
                         iconName: 'Settings',
                         iconText: strings.WebPartPlaceholderName,                                      // "Configure your web part"
                         description: strings.WebPartPlaceholderDescription,                            // "Please configure the web part."
                         // onConfigure: () => { this._setupWebPart(); }
+=======
+                        iconText: strings.WebPartPlaceholderName,                                     // "Configure your web part"
+                        description: strings.WebPartPlaceholderDescription,                           // "Please configure the web part."
+                        onConfigure: () => { this._setupWebPart(); }
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
                     }
                 );
                 renderElement = placeholder;
@@ -122,6 +177,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         ReactDom.unmountComponentAtNode(this.domElement);
     }
 
+<<<<<<< HEAD
     // The value of this property is stored in the serialized data of the web part to allow developers to manage versioning of their web part. The default version is 1.0
     protected get dataVersion(): Version {                                                             // @ts-ignore
         return Version.parse("1.0");
@@ -133,6 +189,16 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         if (propertyPath === "imageLibraryRootFolderUniqueId") {
             // Save custom WebPart property 'imageLibraryRootFolderTitle'
             this.properties.imageLibraryRootFolderTitle = this._availableLists.filter(element => { return element.key == newValue; })[0].text;
+=======
+    protected get dataVersion(): Version {                                                            // @ts-ignore
+        return Version.parse("1.0");
+    }
+
+    protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {  // This API is invoked after updating the new value of the property in the property bag.
+        if (propertyPath === "imageLibraryRootFolderUniqueId") {
+            // Save custom WebPart property 'imageLibraryRootFolderTitle'
+            this.properties.imageLibratyRootFolderTitle = this._availableLists.filter(value => { return value.RootFolder.UniqueId == this.properties.imageLibraryRootFolderUniqueId; })[0].Title;
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         }
     }
 
@@ -146,6 +212,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                     groups: [
                         {
                             groupFields: [
+<<<<<<< HEAD
                                 PropertyPaneDropdown("imageLibraryRootFolderUniqueId", {               // Dropdown menu: Select Document Library
                                     label: strings.ImageLibraryRootFolderUniqueIdLabel,
                                     options: this._availableLists
@@ -195,6 +262,33 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                                         {
                                             key: 'FileTimeASC',                                        // By time - from oldest to newest
                                             text: strings.ImageLibraryOrderByTimeASC
+=======
+                                PropertyPaneDropdown("imageLibraryRootFolderUniqueId", {
+                                    label: strings.ImageLibraryRootFolderUniqueIdLabel,
+                                    options: this._availableLists.map((listitem, i) => {
+                                        return {
+                                            key: listitem.RootFolder.UniqueId,
+                                            text: listitem.Title,
+                                            index: i
+                                        };
+                                    })
+                                }),
+                            ]
+                        },
+                        {
+                            groupFields: [
+                                PropertyPaneChoiceGroup('textOrImageType', {
+                                    label: 'Zoradiť zložky podľa:',
+                                    options: [
+                                        {
+                                            key: 'Txxxx',
+                                            text: 'Času uverejnenia',
+                                            checked: true
+                                        },
+                                        {
+                                            key: 'Yxxxxx',
+                                            text: 'Názvu',
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
                                         }
                                     ]
                                 })
@@ -206,6 +300,7 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         };
     }
 
+<<<<<<< HEAD
     
     // This method is called before any property pane APIs are called. Other property pane APIs cannot be called until this promise is resolved.
     protected async loadPropertyPaneResources(): Promise<void> {                                      
@@ -223,6 +318,15 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     }
 
     private _isWebPartConfigured(): boolean {                                                          // Testing if WebPart has been configured
+=======
+    protected async loadPropertyPaneResources(): Promise<void> {                                      // Showing a spinner while loading the property pane
+        PropertyPaneHelpers.setSpinner();
+        this._availableLists = await this._dataService.getLists();                                    // Code load resources - get lists of document/picture library
+        PropertyPaneHelpers.clearSpinner(200);
+    }
+
+    private _isWebPartConfigured(): boolean {                                                         // Testing if WebPart has been configured
+>>>>>>> a67b05cde1539e29759b697ee10302cf404a4a8c
         return !isEmpty(this.properties.imageLibraryRootFolderUniqueId);
     }
 
