@@ -11,10 +11,10 @@ A SharePoint web part, created with SharePoint Framework (SPFx) that visualizes 
 <!-- ![directory](/assets/SPFxLightRoomImageGalleryWebPart.gif) -->
 
 Feature set:
-1. Select SharePoint Picture/Document Library
-2. Navigate through images and folders
-3. Show breadcrumb to visualize context in the library
-4. Show Lightbox effect for images, using [react-lightgallery](https://github.com/VLZH/react-lightgallery)
+- Select SharePoint Picture/Document Library
+- Navigate through images and folders
+- Show breadcrumb to visualize context in the library
+- Show Lightbox effect for images, using [react-lightgallery](https://github.com/VLZH/react-lightgallery)
 
 ## Release Notes
 
