@@ -42,11 +42,6 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
             this._placeholder = Placeholder;
         }
 
-        // Default Choice Folders order by: FolderNameASC, FolderNameDESC, FolderTimeASC, FolderTimeDESC
-        this.properties.imageLibraryFoldersOrderBy = this.properties.imageLibraryFoldersOrderBy || "FolderNameASC";
-         // Default Choice Files order by: FileNameASC, FileNameDESC, FileTimeASC, FileTimeDESC
-        this.properties.imageLibraryFilesOrderBy = this.properties.imageLibraryFilesOrderBy || "FileNameASC";
-
         this.renderCompleted();
     }
 
@@ -104,14 +99,17 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
         this._initThemeVariant();
         this._dataService = new DataService();
 
-        sp.setup({
+        // Default Choice Folders order by: FolderNameASC, FolderNameDESC, FolderTimeASC, FolderTimeDESC
+        this.properties.imageLibraryFoldersOrderBy = this.properties.imageLibraryFoldersOrderBy || "FolderNameASC";
+        // Default Choice Files order by: FileNameASC, FileNameDESC, FileTimeASC, FileTimeDESC
+        this.properties.imageLibraryFilesOrderBy = this.properties.imageLibraryFilesOrderBy || "FileNameASC";
+       
+        sp.setup({                                                                                     // Init @pnp/pnpjs
             spfxContext: this.context
         });
 
         this._initComplete = true;
-
         return super.onInit();
-
     }
 
     // This API is called at the end of the web part lifecycle on a page.
