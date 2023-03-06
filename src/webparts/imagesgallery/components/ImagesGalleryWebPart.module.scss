@@ -5,17 +5,18 @@
 }
 
 .imagesGalleryWebpart {
+    
+    // Picture thumnails container
     .imageList{
         gap: 5px;
-        //columns: 200px;
+        margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     
     .imageList img {
-        //width: 100% !important;
         width: 300px !important;
-        //height: auto !important;
         height: 200px !important;
         pointer-events: auto;
         cursor: pointer;
