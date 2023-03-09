@@ -17,6 +17,7 @@ First public release. It retains the version numbering continuing from the origi
 - Change: Update to SPFx v1.14.0
 - Change: The thumbnails of the photos in the folders are displayed from left to right, top to bottom. Previously, they were displayed in columns like a newspaper article.
 - Change: This web part is disabled on SharePoint classic pages. Target is only Sharepoint Online Modern sites.
+- Change: Update Toolbox, App page and Package icons.
 - Fix: Show library root folder title instead of name.
 - Fix: Hidden libraries no longer appear in the properties panel.
 - Fix: [Images in the upper level folder overrides those in the lower level folder](https://github.com/chrobaktruhlik/spfx-lightbox-image-gallery/issues/7#issue-1603108675).

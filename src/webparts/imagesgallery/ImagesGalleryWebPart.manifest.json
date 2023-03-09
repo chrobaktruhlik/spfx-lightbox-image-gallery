@@ -31,10 +31,13 @@
                 "sk-SK": "Lightbox galéria obrázkov"
             },
             "description": {
-                "default": "Display a good looking image gallery using lightbox effects",
+                "default": "Display a good looking image gallery using lightbox effects.",
                 "sk-SK": "Pridajte zobrazenie rozšírenej galérie fotografií."
             },
-            "officeFabricIconFontName": "PhotoCollection",
+            // Toolbox icon: 40x28 px
+            "iconImageUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iaWNvbiBpY29uLXRhYmxlciBpY29uLXRhYmxlci1zbGlkZXNob3ciIHdpZHRoPSI0MCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNDAgMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjE0MjkgMCAwIDEuMTQyOSA0IC0yKSIgc3Ryb2tlLXdpZHRoPSIxLjE2NjciPgogIDxwYXRoIGQ9Im0wIDBoMjh2MjhoLTI4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJub25lIi8+CiAgPHBhdGggZD0ibTE3LjUgN2gwLjAxMTY3Ii8+CiAgPHBhdGggZD0ibTMuNSAzLjVtMCAzLjVhMy41IDMuNSAwIDAgMSAzLjUtMy41aDE0YTMuNSAzLjUgMCAwIDEgMy41IDMuNXY5LjMzMzNhMy41IDMuNSAwIDAgMS0zLjUgMy41aC0xNGEzLjUgMy41IDAgMCAxLTMuNS0zLjV6Ii8+CiAgPHBhdGggZD0ibTMuNSAxNS4xNjcgNC42NjY3LTQuNjY2N2EzLjUgNS44MzMzIDAgMCAxIDMuNSAwbDQuNjY2NyA0LjY2NjciLz4KICA8cGF0aCBkPSJtMTUuMTY3IDE0IDIuMzMzMy0yLjMzMzNhMy41IDUuODMzMyAwIDAgMSAzLjUgMGwzLjUgMy41Ii8+CiAgPHBhdGggZD0ibTkuMzMzMyAyNC41aDAuMDExNjY3Ii8+CiAgPHBhdGggZD0ibTE0IDI0LjVoMC4wMTE2NyIvPgogIDxwYXRoIGQ9Im0xOC42NjcgMjQuNWgwLjAxMTY3Ii8+CiA8L2c+Cjwvc3ZnPgo=",
+            // App page icon: 123x70 px
+            "fullPageAppIconImageUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iaWNvbiBpY29uLXRhYmxlciBpY29uLXRhYmxlci1zbGlkZXNob3ciIHdpZHRoPSIxMjMiIGhlaWdodD0iNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEyMyA3MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxnIHRyYW5zZm9ybT0ibWF0cml4KDIuNzE0MyAwIDAgMi43MTQzIDIzLjUgLTMpIiBzdHJva2Utd2lkdGg9IjEuMTY2NyI+CiAgPHBhdGggZD0ibTAgMGgyOHYyOGgtMjh6IiBmaWxsPSJub25lIiBzdHJva2U9Im5vbmUiLz4KICA8cGF0aCBkPSJtMTcuNSA3aDAuMDExNjciLz4KICA8cGF0aCBkPSJtMy41IDMuNW0wIDMuNWEzLjUgMy41IDAgMCAxIDMuNS0zLjVoMTRhMy41IDMuNSAwIDAgMSAzLjUgMy41djkuMzMzM2EzLjUgMy41IDAgMCAxLTMuNSAzLjVoLTE0YTMuNSAzLjUgMCAwIDEtMy41LTMuNXoiLz4KICA8cGF0aCBkPSJtMy41IDE1LjE2NyA0LjY2NjctNC42NjY3YTMuNSA1LjgzMzMgMCAwIDEgMy41IDBsNC42NjY3IDQuNjY2NyIvPgogIDxwYXRoIGQ9Im0xNS4xNjcgMTQgMi4zMzMzLTIuMzMzM2EzLjUgNS44MzMzIDAgMCAxIDMuNSAwbDMuNSAzLjUiLz4KICA8cGF0aCBkPSJtOS4zMzMzIDI0LjVoMC4wMTE2NjciLz4KICA8cGF0aCBkPSJtMTQgMjQuNWgwLjAxMTY3Ii8+CiAgPHBhdGggZD0ibTE4LjY2NyAyNC41aDAuMDExNjciLz4KIDwvZz4KPC9zdmc+Cg==",
             "groupId": "cf066440-0614-43d6-98ae-0b31cf14c7c3",      // Text, media, and content
             "properties": {
                 "webPartTitle": "",                                 // WebPart Title String.

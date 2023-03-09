@@ -2,30 +2,31 @@
     "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
     "solution": {
         "developer": {
-            "name": "Contoso Developer",
-            "privacyUrl": "https://contoso.com/privacy",
-            "termsOfUseUrl": "https://contoso.com/terms-of-use",
-            "websiteUrl": "https://contoso.com/my-app",
-            "mpnId": "Undefined"
+            "name": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "websiteUrl": "",
+            "mpnId": "Undefined-1.14.0"
         },
         "name": "SharePoint Lightbox Image Gallery",
         "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
+        "iconPath": "assets/slideshow96x96.png",
         "version": "2.0.0.0",
         "supportedLocales": [
-            "en-US",
-            "sk-SK"
+            "en-us",
+            "sk-sk"
         ],
         "includeClientSideAssets": true,
         "skipFeatureDeployment": true,
         "isDomainIsolated": false,
         "metadata": {
             "shortDescription": {
-                "default": "Short description of the solution. This value will be displayed on Add an app page. A dictionary must contain a \"default\" key.",
-                "sk-SK": "Krátky opis aplikácie."
+                "default": "spfx-lightbox-image-gallery short description.",
+                "sk-sk": "Krátky opis aplikácie."
             },
             "longDescription": {
-                "default": "Long description of the solution with HTML support. This value will be displayed on the App's About page. A dictionary must contain a \"default\" key.",
-                "sk-SK": "Popis aplikácie."
+                "default": "Display a good looking image gallery using lightbox effects.",
+                "sk-sk": "Popis aplikácie."
             },
             "screenshotPaths": [],
             "videoUrl": "",
