@@ -1,5 +1,12 @@
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 
+:global {
+    #workbenchPageContent,
+    .CanvasComponent.LCS .CanvasZone {
+      max-width: 100% !important;
+    }
+}
+
 .imagesGalleryWebpart {
     position: relative;
 }
@@ -24,7 +31,11 @@
         object-fit: cover;
     }
 
-    .folderList{
+    .breadCrumb {
+        margin-left: 10px;
+    }
+
+    .folderList {
         position: inherit;
         display: flex;
         flex-wrap: wrap;
@@ -67,7 +78,7 @@
                         bottom: 4px;
                     }
             
-                    .folderPaper{
+                    .folderPaper {
                         background-color: #f5f5f5;
                         position: absolute;
                         left: 7px;
@@ -79,7 +90,7 @@
                         height: 64px;
                     }
             
-                    .folderCount{
+                    .folderCount {
                         color: #bf5712;
                         position: absolute;
                         margin-left: 10px;

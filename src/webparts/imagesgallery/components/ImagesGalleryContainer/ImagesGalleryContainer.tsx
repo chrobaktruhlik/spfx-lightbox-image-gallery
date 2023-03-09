@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
+//import {  } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'ImagesGalleryWebPartStrings';
 import styles from '../ImagesGalleryWebPart.module.scss';
@@ -89,28 +90,36 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
         }
 
         // WebPart title
-        renderWebPartTitle = <WebPartTitle displayMode={this.props.displayMode} title={this.props.webPartTitle} updateProperty={(value: string) => this.props.updateWebPartTitle(value)} />;
+        renderWebPartTitle = <WebPartTitle
+            displayMode={this.props.displayMode}
+            title={this.props.webPartTitle}
+            updateProperty={(value: string) => this.props.updateWebPartTitle(value)}
+        />;
 
         // Error text: "No photos to display."
         if (isEmpty(subFolders) && isEmpty(images)) {
-            renderWebPartEmptyMessage = <MessageBar messageBarType={MessageBarType.info}>{strings.ShowBlankInfoMessage}</MessageBar>;
+            renderWebPartEmptyMessage =
+                <MessageBar messageBarType={MessageBarType.info}>
+                    {strings.ShowBlankInfoMessage}
+                </MessageBar>;
         }
+
+//        get formFactor(): WebPartFormFactor;
 
         renderWebPartContent =
             <React.Fragment>
                 {renderOverlay}
                 <Breadcrumb
-                    items={this._getBreadCrumbData()}
-                    maxDisplayedItems={5}
-                    theme={this.props.themeVariant as ITheme}
-                    onRenderOverflowIcon={this._getCustomOverflowIcon}
-                // dividerAs={this._getCustomDivider}
+                    items = {this._getBreadCrumbData()}
+                    maxDisplayedItems = {5}
+                    theme = {this.props.themeVariant as ITheme}
+                    onRenderOverflowIcon = {this._getCustomOverflowIcon}
+                    className = {styles.breadCrumb}
+                    // dividerAs={this._getCustomDivider}
                 />
                 {renderWebPartEmptyMessage}
                 <FolderList foldersInfo={subFolders} onClick={async (folderInfo) => await this._fetchDocumentLibraryItems(folderInfo.UniqueId)} />
                 {renderLightbox}
-                {/* <ImageList rootUrl={this.props.rootUrl} imagesInfo={images} /> */}
-                {/* <ImageList rootUrl={this.props.rootUrl} imagesInfo={images} /> */}
             </React.Fragment>;
 
         // Error Message
