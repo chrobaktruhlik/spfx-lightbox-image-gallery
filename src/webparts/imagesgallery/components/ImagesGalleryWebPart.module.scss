@@ -32,12 +32,12 @@
         object-fit: cover;
     }
 
-    .webPartTitle {
-        margin-left: 20px;      // Only for Full page mode
+    .webPartTitleFullPage {     // Only for Full page mode
+        margin-left: 20px;
     }
 
-    .breadCrumb {
-        margin-left: 10px;      // Only for Full page mode
+    .breadCrumbFullPage {       // Only for Full page mode
+        margin-left: 10px;      
     }
 
     .folderList {
