@@ -1,47 +1,49 @@
 {
-  "name": "spfx-lightbox-image-gallery",
-  "version": "1.0.1",
-  "emgines": {
-    "node": "^14.21.2"
-  },
-  "private": true,
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "gulp build",
-    "bundle-ship": "gulp bundle --ship",
-    "clean": "gulp clean",
-    "dist": "npm -s run clean && npm -s run bundle-ship && npm -s run package-solution-ship",
-    "package-solution-ship": "gulp package-solution --ship",
-    "version": "node ./tools/pre-version.js",
-    "postversion": "npm -s run dist"
-  },
-  "dependencies": {
-    "@microsoft/sp-core-library": "1.12.1",
-    "@microsoft/sp-lodash-subset": "1.12.1",
-    "@microsoft/sp-office-ui-fabric-core": "1.12.1",
-    "@microsoft/sp-property-pane": "1.12.1",
-    "@microsoft/sp-webpart-base": "1.12.1",
-    "@pnp/common": "2.7.0",
-    "@pnp/logging": "2.7.0",
-    "@pnp/odata": "2.7.0",
-    "@pnp/pnpjs": "2.7.0",
-    "@pnp/sp": "2.7.0",
-    "@pnp/spfx-controls-react": "3.2.1",
-    "@pnp/spfx-property-controls": "3.2.0",
-    "office-ui-fabric-react": "7.156.0",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "react-lightgallery": "0.9.0"
-  },
-  "devDependencies": {
-    "@microsoft/rush-stack-compiler-3.9": "0.4.46",
-    "@microsoft/sp-build-web": "1.12.1",
-    "@microsoft/sp-module-interfaces": "1.12.1",
-    "@microsoft/sp-tslint-rules": "1.12.1",
-    "@microsoft/sp-webpart-workbench": "1.12.1",
-    "@types/react": "16.9.36",
-    "@types/react-dom": "16.9.8",
-    "@types/webpack-env": "^1.16.2",
-    "gulp": "~4.0.2"
-  }
+    "name": "spfx-lightbox-image-gallery",
+    "version": "2.0.0",
+    "engines": {
+        "node": "^14.21.2"
+    },
+    "private": true,
+    "main": "lib/index.js",
+    "author": "chrobaktruhlik",
+    "repository": "https://github.com/chrobaktruhlik/spfx-lightbox-image-gallery.git",
+    "license": "MIT",
+    "scripts": {
+        "build": "gulp build",
+        "bundle-ship": "gulp bundle --ship",
+        "clean": "gulp clean",
+        "dist": "npm -s run clean && npm -s run bundle-ship && npm -s run package-solution-ship",
+        "package-solution-ship": "gulp package-solution --ship",
+        "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve",
+        "trust-dev-cert": "gulp trust-dev-cert",
+        "postversion": "gulp version-sync"
+    },
+    "dependencies": {
+        "@microsoft/sp-core-library": "1.14.0",
+        "@microsoft/sp-image-helper": "^1.16.1",
+        "@microsoft/sp-lodash-subset": "1.14.0",
+        "@microsoft/sp-office-ui-fabric-core": "1.14.0",
+        "@microsoft/sp-property-pane": "1.14.0",
+        "@microsoft/sp-webpart-base": "1.14.0",
+        "@pnp/pnpjs": "^2.15.0",
+        "@pnp/spfx-controls-react": "^3.12.0",
+        "@pnp/spfx-property-controls": "^3.11.0",
+        "office-ui-fabric-react": "^7.174.1",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-lightgallery": "0.9.0"
+    },
+    "devDependencies": {
+        "@microsoft/rush-stack-compiler-3.9": "^0.5.0",
+        "@microsoft/sp-build-web": "1.14.0",
+        "@microsoft/sp-module-interfaces": "1.14.0",
+        "@microsoft/sp-tslint-rules": "1.14.0",
+        "@types/react": "^16.9.51",
+        "@types/react-dom": "^16.9.8",
+        "@types/webpack-env": "^1.16.2",
+        "ajv": "~5.2.2",
+        "gulp": "~4.0.2",
+        "spfx-fast-serve-helpers": "~1.14.0"
+    }
 }

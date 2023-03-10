@@ -1,11 +1,19 @@
 define([], function () {
     return {
-        "lblAmountColumns": "Set the amount of columns for the gallery",
-        "lblPicturesURL": "Source for your images",
-        "PlaceholderIconName": "Edit",
-        "PlaceholderName": "Konfigurácia webovej časti",
-        "PlaceholderDescription": "Prosím, nakonfigurujte webovú časť.",
-        "PlaceholderbtnLbl": "Configure",
-        "ShowBlankEditInfoMessage": "Žiadne fotografie na zobrazenie."
+        "ImageLibraryRootFolderUniqueIdLabel": "Knižnica fotografií",
+        "PropertyPanePageHeaderDescription":   "Vyberte knižnicu fotografií a jej možnosti zobrazenia.",
+        "PropertyPaneGroupViewOptionsName":    "Možnosti zobrazenia",
+
+        "ShowBlankInfoMessage":                "Žiadne fotografie na zobrazenie.",
+
+        "ImageLibraryFoldersOrderByLabel":     "Zoradiť zložky v knižnici podľa:",
+        "ImageLibraryFilesOrderByLabel":       "Zoradiť fotografie v zložkách podľa:",
+        "ImageLibraryOrderByNameASC":          "Názvu",
+        "ImageLibraryOrderByNameDESC":         "Názvu v obrátenom poradí",
+        "ImageLibraryOrderByTimeDESC":         "Času uverejnenia (od novších po staršie)",
+        "ImageLibraryOrderByTimeASC":          "Času uverejnenia (od starších po novšie)",
+
+        "WebPartPlaceholderDescription":       "Prosím, vyberte knižnicu fotografií.",
+        "WebPartPlaceholderName":              "Konfigurácia webovej časti"
     }
 });

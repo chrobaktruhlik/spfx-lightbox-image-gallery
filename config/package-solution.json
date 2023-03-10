@@ -1,21 +1,49 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "developer": {
-      "name": "Contoso",
-      "privacyUrl": "https://contoso.com/privacy",
-      "termsOfUseUrl": "https://contoso.com/terms-of-use",
-      "websiteUrl": "https://contoso.com/my-app",
-      "mpnId": "000000"
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "developer": {
+            "name": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "websiteUrl": "",
+            "mpnId": "Undefined-1.14.0"
+        },
+        "name": "SharePoint Lightbox Image Gallery",
+        "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
+        "iconPath": "assets/slideshow96x96.png",
+        "version": "2.0.0.0",
+        "supportedLocales": [
+            "en-us",
+            "sk-sk"
+        ],
+        "includeClientSideAssets": true,
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "metadata": {
+            "shortDescription": {
+                "default": "spfx-lightbox-image-gallery short description.",
+                "sk-sk": "Krátky opis aplikácie."
+            },
+            "longDescription": {
+                "default": "Display a good looking image gallery using lightbox effects.",
+                "sk-sk": "Popis aplikácie."
+            },
+            "screenshotPaths": [],
+            "videoUrl": "",
+            "categories": [
+                "Site Design"
+            ]
+        },
+        "features": [
+            {
+                "title": "spfx Feature",
+                "description": "The feature that activates elements of the solution.",
+                "id": "256cc7e1-1154-4987-83ae-644419f6ce57",
+                "version": "1.0.0.0"
+            }
+        ]
     },
-    "name": "SharePoint Lightbox Image Gallery",
-    "id": "a7d34cfc-bc45-4910-9ec5-3e2ca97a5d27",
-    "version": "1.0.1.0",
-    "includeClientSideAssets": true,
-    "skipFeatureDeployment": true,
-    "isDomainIsolated": false
-  },
-  "paths": {
-    "zippedPackage": "solution/spfx-lightbox-image-gallery.sppkg"
-  }
+    "paths": {
+        "zippedPackage": "solution/spfx-lightbox-image-gallery.sppkg"
+    }
 }
