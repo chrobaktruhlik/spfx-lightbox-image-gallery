@@ -3,6 +3,7 @@ import styles from './../ImagesGalleryWebPart.module.scss';
 import { IImageListProps } from './IImageListProps';
 import Image from '../Image/Image';
 import { LightgalleryProvider } from "react-lightgallery";
+// import { LightgalleryProvider } from "../../../../modules/src";
 import "lightgallery.js/dist/css/lightgallery.css";
 import "lightgallery.js/dist/css/lg-transitions.css";  // lightgallery mode for other than lg-slide and lg-fade
 
