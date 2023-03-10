@@ -92,7 +92,7 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
             displayMode = {this.props.displayMode}
             title = {this.props.webPartTitle}
             updateProperty = {(value: string) => this.props.updateWebPartTitle(value)}
-            className = {this.props.webPartFormFactor == 0 ? "" : styles.webPartTitle}
+            className = {this.props.webPartFormFactor == 0 ? "" : styles.webPartTitleFullPage}
         />;
 
         // Error text: "No photos to display."
@@ -111,7 +111,7 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
                     maxDisplayedItems = {5}
                     theme = {this.props.themeVariant as ITheme}
                     onRenderOverflowIcon = {this._getCustomOverflowIcon}
-                    className = {this.props.webPartFormFactor == 0 ? "" : styles.breadCrumb}
+                    className = {this.props.webPartFormFactor == 0 ? "" : styles.breadCrumbFullPage}
                     // dividerAs={this._getCustomDivider}
                 />
                 {renderWebPartEmptyMessage}
