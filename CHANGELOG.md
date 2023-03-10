@@ -6,7 +6,7 @@ All notable changes to the `align-comments-vscode-extension` extension.
 - Nothing
 
 
-## [2.0.0] - 2023-03-xx
+## [2.0.0] - 2023-03-10
 First public release. It retains the version numbering continuing from the original. Release 2.0.0 is first new, modified version.
 
 - New: Ordering the root document library in the properties panel by name (custom name instead of internal name).
