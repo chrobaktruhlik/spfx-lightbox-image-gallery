@@ -4,7 +4,6 @@ import { Version, DisplayMode } from '@microsoft/sp-core-library';
 import { ThemeProvider, IReadonlyTheme, ThemeChangedEventArgs } from '@microsoft/sp-component-base';
 import {
     IPropertyPaneConfiguration,
-    PropertyPaneChoiceGroup,
     PropertyPaneDropdown,
     IPropertyPaneDropdownOption
 } from '@microsoft/sp-property-pane';
@@ -27,14 +26,8 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     private _placeholder = null;
     private _themeProvider: ThemeProvider;
     private _themeVariant: IReadonlyTheme;
-    private _initComplete = false;
-
     
     public async render(): Promise<void> {
-        if (!this._initComplete) {
-            return;
-        }
-
         if (this.displayMode === DisplayMode.Edit) {
             const { Placeholder } = await import(
                 '@pnp/spfx-controls-react/lib/Placeholder'
@@ -50,7 +43,6 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
     }
 
     protected renderCompleted(): void {
-        // super.renderCompleted();
         let renderElement = null;
 
         if (this._isWebPartConfigured()) {
@@ -68,7 +60,10 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
                     webPartTitle: this.properties.webPartTitle,                                        // Sample text that is created when scaffolding your web part.
                     updateWebPartTitle: (value: string) => {
                         this.properties.webPartTitle = value;
-                    }
+                    },
+                    
+                    // @ts-ignore
+                    webPartFormFactor: this.context.formFactor || 0                                    // FullSize = 1, Standard = 0
                 } as IImagesGalleryContainerProps
             );
 
@@ -96,20 +91,22 @@ export default class ImagesGalleryWebPart extends BaseClientSideWebPart<IImagesG
 
     // This event method is called when the web part is initialized.
     public async onInit(): Promise<void> {
-        this._initThemeVariant();
-        this._dataService = new DataService();
+        return super.onInit()
+            .then(() => {
+                // Other init code may be present
 
-        // Default Choice Folders order by: FolderNameASC, FolderNameDESC, FolderTimeASC, FolderTimeDESC
-        this.properties.imageLibraryFoldersOrderBy = this.properties.imageLibraryFoldersOrderBy || "FolderNameASC";
-        // Default Choice Files order by: FileNameASC, FileNameDESC, FileTimeASC, FileTimeDESC
-        this.properties.imageLibraryFilesOrderBy = this.properties.imageLibraryFilesOrderBy || "FileNameASC";
-       
-        sp.setup({                                                                                     // Init @pnp/pnpjs
-            spfxContext: this.context
-        });
+                this._initThemeVariant();
+                this._dataService = new DataService();
 
-        this._initComplete = true;
-        return super.onInit();
+                sp.setup({  // Init @pnp/pnpjs
+                    spfxContext: this.context
+                });
+                
+                // Default Choice Folders order by: FolderNameASC, FolderNameDESC, FolderTimeASC, FolderTimeDESC
+                this.properties.imageLibraryFoldersOrderBy = this.properties.imageLibraryFoldersOrderBy || "FolderNameASC";
+                // Default Choice Files order by: FileNameASC, FileNameDESC, FileTimeASC, FileTimeDESC
+                this.properties.imageLibraryFilesOrderBy = this.properties.imageLibraryFilesOrderBy || "FileNameASC";
+            });
     }
 
     // This API is called at the end of the web part lifecycle on a page.

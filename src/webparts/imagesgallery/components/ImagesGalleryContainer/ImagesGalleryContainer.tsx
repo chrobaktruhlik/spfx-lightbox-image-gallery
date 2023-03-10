@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-//import {  } from '@microsoft/sp-webpart-base';
-
 import * as strings from 'ImagesGalleryWebPartStrings';
 import styles from '../ImagesGalleryWebPart.module.scss';
 
@@ -91,9 +89,10 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
 
         // WebPart title
         renderWebPartTitle = <WebPartTitle
-            displayMode={this.props.displayMode}
-            title={this.props.webPartTitle}
-            updateProperty={(value: string) => this.props.updateWebPartTitle(value)}
+            displayMode = {this.props.displayMode}
+            title = {this.props.webPartTitle}
+            updateProperty = {(value: string) => this.props.updateWebPartTitle(value)}
+            className = {this.props.webPartFormFactor == 0 ? "" : styles.webPartTitle}
         />;
 
         // Error text: "No photos to display."
@@ -104,8 +103,6 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
                 </MessageBar>;
         }
 
-//        get formFactor(): WebPartFormFactor;
-
         renderWebPartContent =
             <React.Fragment>
                 {renderOverlay}
@@ -114,7 +111,7 @@ export class ImagesGalleryContainer extends React.Component<IImagesGalleryContai
                     maxDisplayedItems = {5}
                     theme = {this.props.themeVariant as ITheme}
                     onRenderOverflowIcon = {this._getCustomOverflowIcon}
-                    className = {styles.breadCrumb}
+                    className = {this.props.webPartFormFactor == 0 ? "" : styles.breadCrumb}
                     // dividerAs={this._getCustomDivider}
                 />
                 {renderWebPartEmptyMessage}

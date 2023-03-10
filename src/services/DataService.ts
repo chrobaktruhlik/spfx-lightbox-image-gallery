@@ -49,7 +49,7 @@ export default class DataService implements IDataService {
 
         let files = await folder.files.orderBy(orderby, ascending).get();
         
-        files = files.filter(fileData => ["jpg", "jpeg", "png"].indexOf(fileData.Name.toLocaleLowerCase().split('.').pop()) !== -1);
+        files = files.filter(fileData => ["jpg", "jpeg", "png", "mp4"].indexOf(fileData.Name.toLocaleLowerCase().split('.').pop()) !== -1);
         return files;
     }
 }

@@ -7,5 +7,5 @@ export interface IImagesGalleryWebPartProps {
     webPartTitle: string;
     
     imageLibraryFoldersOrderBy: string;                      // Folder sort logic
-    imageLibraryFilesOrderBy: string;                        // Files in folders sort logic 
+    imageLibraryFilesOrderBy: string;                        // Files in folders sort logic
 } 

@@ -32,10 +32,23 @@ export default class Image extends React.Component<IImageProps, {}> {
             } as IImageHelperRequest
         );
 
+        console.log("thumbnailPath:", thumbnailPath)
         return (
-            <LightgalleryItem group="any" src={thumbnailPathForLightBox} thumb={thumbnailPath} downloadUrl={imagePath}>
-                <img src={thumbnailPath} title={this.props.imageInfo.Name} alt={this.props.imageInfo.Name} />
+            <LightgalleryItem group="any"    src={imagePath} type="video/mp4">
+                <video src={imagePath} className="lg-video-object lg-html5">
+
+                </video>
             </LightgalleryItem>
+            // <LightgalleryItem group="any" src={thumbnailPathForLightBox} thumb={thumbnailPath} downloadUrl={imagePath}>
+            //     {/* Hidden video div */}
+            //     <div style={{display:"block"}}>
+            //         <video className="lg-video-object lg-html" >
+            //             <source src={imagePath} type="video/mp4" />
+            //             Your browser does not support HTML5 video.
+            //         </video>
+            //     </div>
+            //     {/* <img src={thumbnailPath} title={this.props.imageInfo.Name} alt={this.props.imageInfo.Name} /> */}
+            // </LightgalleryItem>
         );
     }
 }

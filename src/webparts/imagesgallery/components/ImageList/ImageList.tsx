@@ -44,7 +44,7 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                 }
                 // List of enabled plugins. Default = [ "lg-fullscreen.js", "lg-thumbnail.js", "lg-video.js", "lg-zoom.js" ]    
                 // List of supported plugins: lg-autoplay.js, lg-fullscreen.js, lg-hash.js, lg-pager.js, lg-thumbnail.js, lg-video.js, lg-zoom.js, lg-share.j
-                plugins = "[ lg-fullscreen.js, lg-thumbnail.js ]"
+                plugins = "[ lg-fullscreen.js, lg-thumbnail.js, lg-video.js ]"
             >
                 <div className={styles.imageList}>
                     {allImages}

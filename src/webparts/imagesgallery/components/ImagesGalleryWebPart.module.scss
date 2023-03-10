@@ -1,11 +1,12 @@
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 
-:global {
-    #workbenchPageContent,
-    .CanvasComponent.LCS .CanvasZone {
-      max-width: 100% !important;
-    }
-}
+// For test only
+// :global {
+//     #workbenchPageContent,
+//     .CanvasComponent.LCS .CanvasZone {
+//       max-width: 100% !important;
+//     }
+// }
 
 .imagesGalleryWebpart {
     position: relative;
@@ -31,8 +32,12 @@
         object-fit: cover;
     }
 
+    .webPartTitle {
+        margin-left: 20px;      // Only for Full page mode
+    }
+
     .breadCrumb {
-        margin-left: 10px;
+        margin-left: 10px;      // Only for Full page mode
     }
 
     .folderList {
