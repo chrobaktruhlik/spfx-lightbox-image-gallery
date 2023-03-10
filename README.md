@@ -15,6 +15,7 @@ Feature set:
 - Navigate through images and folders
 - Show breadcrumb to visualize context in the library
 - Show Lightbox effect for images, using [react-lightgallery](https://github.com/VLZH/react-lightgallery)
+- Supported types: .jpg, .jpeg, .png, .mp4
 
 ## Release Notes
 
