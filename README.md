@@ -1,6 +1,5 @@
 # SharePoint Lightbox Image Gallery Web Part
-
-Fork from [YannickRe / spfx-lightbox-image-gallery](https://github.com/YannickRe/spfx-lightbox-image-gallery) version 1.0.0.
+Fork from [YannickRe/spfx-lightbox-image-gallery](https://github.com/YannickRe/spfx-lightbox-image-gallery), version 1.0.0.
 
 ## Summary
 A SharePoint web part, created with SharePoint Framework (SPFx) that visualizes images/photos from a Document Library or Picture Library on a page. It uses the existing folder structure to create albums and puts them in the breadcrumb when opened. Clicking on an image opens a nice Lightbox effect for easy browsing the fullsized versions.
@@ -9,23 +8,23 @@ Primarily designed for presenting photos, but the web part also supports video f
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-<!-- ![directory](/assets/SPFxLightRoomImageGalleryWebPart.gif) -->
-
 Feature set:
 - Select SharePoint Picture/Document Library.
 - Navigate through images and folders.
 - Show breadcrumb to visualize context in the library.
-- Show Lightbox effect for images, using modified [react-lightgallery](https://github.com/VLZH/react-lightgallery). The modified module is included in the repository.
+- Displays images using the Lightbox effect.
+- Independent sorting method for directories and images in the library.
 - Supported file types: .jpg, .jpeg, .png, .mp4
 
-## Release Notes
+This SharePoint web part uses modified version of react wrapper [react-lightgallery](https://github.com/VLZH/react-lightgallery) for [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js). The modified react-lightgallery module is included in the repository.
 
+
+## Release Notes
 ![drop](https://img.shields.io/badge/Version-2.1.0-green.svg)
 
 For more information see [CHANGELOG](CHANGELOG.md) file.
 
 ## Applies to
-
 * [SharePoint Online](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview) Modern Site
 
 ## Disclaimer
