@@ -21,7 +21,7 @@ addFastServe(build);
 /* end of fast-serve */
 
 build.initialize(require('gulp'));
-
+// build.addSuppression(/Warning - \[sass\] The local CSS class '.+?' is not camelCase and will not be type-safe/gi);
 
 gulp.task('version-sync', function (done) {                                                                                                  // Create gulp task: 'version-sync'
 // This function updates the package-solution version analogue to the the package.json file.

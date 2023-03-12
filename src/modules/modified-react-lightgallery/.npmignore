@@ -1,0 +1,7 @@
+/node_modules
+/src
+/example
+/.yarn-error.log
+/.cache
+/.example_dist
+/.github

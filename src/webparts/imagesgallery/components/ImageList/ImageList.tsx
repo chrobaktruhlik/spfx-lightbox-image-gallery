@@ -2,10 +2,12 @@ import * as React from 'react';
 import styles from './../ImagesGalleryWebPart.module.scss';
 import { IImageListProps } from './IImageListProps';
 import Image from '../Image/Image';
-import { LightgalleryProvider } from "react-lightgallery";
-// import { LightgalleryProvider } from "../../../../modules/src";
+import { LightgalleryProvider } from "../../../../modules/modified-react-lightgallery";
+
 import "lightgallery.js/dist/css/lightgallery.css";
 import "lightgallery.js/dist/css/lg-transitions.css";  // lightgallery mode for other than lg-slide and lg-fade
+import '../LightGalleryCustomStyles.css';              // lightgalleryjs custom css styles
+
 
 export default class ImageList extends React.Component<IImageListProps, {}> {
 
@@ -40,6 +42,8 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                         speed: 600,                 // Transition duration (in ms).
                         mousewheel: true,           // Ability to navigate to next/prev slides on mousewheel.
                         // download: false,            // Enable download button.
+                        addClass: 'lg-custom-class',// Add custom class for gallery, can be used to set different style for different gallery.
+                        fullScreen: true,           // Enable/Disable fullscreen mode (require ' plugin'lg-fullscreen.js' plugin)
                         numberOfSlideItemsInDom: 3
                     }
                 }
