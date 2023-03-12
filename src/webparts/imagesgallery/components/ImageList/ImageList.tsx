@@ -30,7 +30,7 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                         counter: true,              // Whether to show total number of images and index number of currently displayed image.
                         closable: false,            // Allows clicks on dimmer to close gallery.
                         escKey: true,               // Whether the LightGallery could be closed by pressing the "Esc" key.
-                        // thumbnail: false,           // Enable thumbnails for the gallery. (Thumbnail plugin)
+                        thumbnail: true,            // Enable thumbnails for the gallery. (Thumbnail plugin)
                         mode: "lg-lollipop-rev",
                         loop: false,                // If false, will disable the ability to loop back to the beginning of the gallery when on the last element.
                         keyPress: true,             // Enable keyboard navigation.
@@ -47,7 +47,7 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                         numberOfSlideItemsInDom: 3
                     }
                 }
-                // List of enabled plugins. Default = [ "lg-fullscreen.js", "lg-thumbnail.js", "lg-video.js", "lg-zoom.js" ]    
+                // List of enabled plugins. Default = lg-fullscreen.js, lg-thumbnail.js, lg-video.js, lg-zoom.js
                 // List of supported plugins: lg-autoplay.js, lg-fullscreen.js, lg-hash.js, lg-pager.js, lg-thumbnail.js, lg-video.js, lg-zoom.js, lg-share.j
                 plugins = "[ lg-fullscreen.js, lg-thumbnail.js, lg-video.js ]"
             >
