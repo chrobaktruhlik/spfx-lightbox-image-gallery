@@ -1,0 +1,3 @@
+.lg-custom-class img.lg-object.lg-has-poster {
+    object-fit: contain;    /* Fix video poster */
+}

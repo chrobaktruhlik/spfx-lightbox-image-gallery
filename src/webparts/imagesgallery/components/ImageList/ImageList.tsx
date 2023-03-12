@@ -2,9 +2,12 @@ import * as React from 'react';
 import styles from './../ImagesGalleryWebPart.module.scss';
 import { IImageListProps } from './IImageListProps';
 import Image from '../Image/Image';
-import { LightgalleryProvider } from "react-lightgallery";
+import { LightgalleryProvider } from "../../../../modules/modified-react-lightgallery";
+
 import "lightgallery.js/dist/css/lightgallery.css";
 import "lightgallery.js/dist/css/lg-transitions.css";  // lightgallery mode for other than lg-slide and lg-fade
+import '../LightGalleryCustomStyles.css';              // lightgalleryjs custom css styles
+
 
 export default class ImageList extends React.Component<IImageListProps, {}> {
 
@@ -27,8 +30,8 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                         counter: true,              // Whether to show total number of images and index number of currently displayed image.
                         closable: false,            // Allows clicks on dimmer to close gallery.
                         escKey: true,               // Whether the LightGallery could be closed by pressing the "Esc" key.
-                        // thumbnail: false,           // Enable thumbnails for the gallery. (Thumbnail plugin)
-                        mode: "lg-lollipop-rev",
+                        thumbnail: true,            // Enable thumbnails for the gallery. (Thumbnail plugin)
+                        mode: "lg-lollipop-rev",    // Type of transition between images.
                         loop: false,                // If false, will disable the ability to loop back to the beginning of the gallery when on the last element.
                         keyPress: true,             // Enable keyboard navigation.
                         hideBarsDelay: 0,           // Delay for hiding gallery controls in ms. Pass 0 if you don't want to hide the controls.
@@ -38,11 +41,13 @@ export default class ImageList extends React.Component<IImageListProps, {}> {
                                                     // Functional only when 'thumbnail: true'
                         speed: 600,                 // Transition duration (in ms).
                         mousewheel: true,           // Ability to navigate to next/prev slides on mousewheel.
-                        // download: false,            // Enable download button.
+                        download: true,             // Enable download button.
+                        addClass: 'lg-custom-class',// Add custom class for gallery, can be used to set different style for different gallery.
+                        fullScreen: true,           // Enable/Disable fullscreen mode (require 'lg-fullscreen.js' plugin)
                         numberOfSlideItemsInDom: 3
                     }
                 }
-                // List of enabled plugins. Default = [ "lg-fullscreen.js", "lg-thumbnail.js", "lg-video.js", "lg-zoom.js" ]    
+                // List of enabled plugins. Default = lg-fullscreen.js, lg-thumbnail.js, lg-video.js, lg-zoom.js
                 // List of supported plugins: lg-autoplay.js, lg-fullscreen.js, lg-hash.js, lg-pager.js, lg-thumbnail.js, lg-video.js, lg-zoom.js, lg-share.j
                 plugins = "[ lg-fullscreen.js, lg-thumbnail.js, lg-video.js ]"
             >
