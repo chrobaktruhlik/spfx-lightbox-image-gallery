@@ -1,6 +1,6 @@
 {
     "name": "spfx-lightbox-image-gallery",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "engines": {
         "node": "^14.21.2"
     },
@@ -37,7 +37,7 @@
     "devDependencies": {
         "@babel/preset-env": "^7.20.2",
         "@babel/preset-react": "^7.18.6",
-        "@microsoft/rush-stack-compiler-3.9": "^0.5.0",
+        "@microsoft/rush-stack-compiler-3.9": "^0.4.37",
         "@microsoft/sp-build-web": "1.14.0",
         "@microsoft/sp-module-interfaces": "1.14.0",
         "@microsoft/sp-tslint-rules": "1.14.0",
@@ -47,6 +47,7 @@
         "ajv": "~5.2.2",
         "babel-loader": "^8.3.0",
         "gulp": "~4.0.2",
-        "spfx-fast-serve-helpers": "~1.14.0"
+        "spfx-fast-serve-helpers": "~1.14.0",
+        "tslint-microsoft-contrib": "^6.2.0"
     }
 }

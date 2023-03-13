@@ -5,6 +5,9 @@ All notable changes to the `spfx-lightbox-image-gallery` extension.
 ## [Unreleased]
 - Nothing
 
+## [2.1.1] - 2023-03-14
+- Fix: Missing download button for video files.
+
 ## [2.1.0] - 2023-03-13
 - New: Support for .mp4 files.
 

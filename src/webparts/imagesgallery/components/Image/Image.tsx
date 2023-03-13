@@ -52,7 +52,7 @@ export default class Image extends React.Component<IImageProps, {}> {
                 group = "any"
                 src = {isVideo ? "" : thumbnailPathForLightBox}
                 thumb = {thumbnailPath}
-                downloadUrl = {isVideo ? false : imagePath}
+                downloadUrl = {imagePath}
                 html = {isVideo ?
                     "<video class='lg-video-object lg-html5' controls preload='none' disablepictureinpicture controlslist='nodownload'> \
                         <source src='" + imagePath + "' type='video/" + isVideo + "'></source> \
