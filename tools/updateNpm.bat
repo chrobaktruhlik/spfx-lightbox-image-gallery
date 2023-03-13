@@ -1,6 +1,7 @@
-rem see https://github.com/coreybutler/nvm-windows/issues/300
-
 @echo off
+rem see https://github.com/coreybutler/nvm-windows/issues/300
+rem Modified version
+
 SETLOCAL EnableDelayedExpansion
 
 if [%1] == [] (
@@ -9,15 +10,22 @@ if [%1] == [] (
 	set wanted_version=%1
 
 	if "!wanted_version!" == "latest" (
-		for /f %%i in ('npm show npm version') do set wanted_version=%%i
+		for /f %%i in ('npm show npm version') do set target_version=%%i
+		set wanted_version=!target_version!
 	)
 
 	for /f %%i in ('npm -g -v') do set cur_version=%%i
+	for /f %%i in ('npm show npm@!wanted_version! version') do set target_version=%%i
 
-	if "!cur_version!" == "!wanted_version!" (
-		echo Already on npm version !wanted_version!.
+	if not "!wanted_version!" == "!target_version!" (
+		echo Version !wanted_version! does not exist.
+		goto :eof
+	)
+
+	if "!cur_version!" == "!target_version!" (
+		echo Already on npm version !target_version!.
 	) else (
-		echo Updating to !wanted_version!...
+		echo Updating to !target_version!...
 
 		set node_path=!PROGRAMFILES!\nodejs
 
@@ -33,14 +41,14 @@ if [%1] == [] (
 		)
 		rename "!node_path!\node_modules\npm" npm2
 		
-		node "!node_path!\node_modules\npm2\bin\npm-cli.js" i npm@!wanted_version! -g
+		node "!node_path!\node_modules\npm2\bin\npm-cli.js" i npm@!target_version! -g
 
 		for /f %%i in ('npm -g -v') do set new_version=%%i
 
 		echo New version installed is !new_version!
 
-		if "!new_version!" == "!wanted_version!" (
-			echo Successfully updated to !wanted_version!. Cleaning up backups...
+		if "!new_version!" == "!target_version!" (
+			echo Successfully updated to !target_version!. Cleaning up backups...
 			del "!node_path!\npm2"
 			del "!node_path!\npm2.cmd"
 			if exist "!node_path!\npm2.ps1" (
